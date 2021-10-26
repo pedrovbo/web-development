@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8" />
+		<title>Praticando Javascript - Exe 1</title>
+	</head>
+	<body></body>
+	<script type="text/javascript">
+		var numero1 = prompt('Insira o primeiro número: ');
+		var numero2 = prompt('Insira o segundo número: ');
+		var operacao = prompt(
+			'Qual operação deseja realizar? (Digite + ou - ou * ou /)'
+		);
+
+		var resutaldoOperacao = 0;
+
+		if (operacao == '+') resultadoOperacao = soma(numero1, numero2);
+
+		if (operacao == '-') resultadoOperacao = diminui(numero1, numero2);
+
+		if (operacao == '*') resultadoOperacao = multiplica(numero1, numero2);
+
+		if (operacao == '/') resultadoOperacao = divida(numero1, numero2);
+
+		alert('O resultado da operação é igual a: ' + resultadoOperacao);
+
+		function soma(numero1, numero2) {
+			return parseInt(numero1) + parseInt(numero2);
+		}
+
+		function diminui(numero1, numero2) {
+			return parseInt(numero1) - parseInt(numero2);
+		}
+
+		function multiplica(numero1, numero2) {
+			return parseInt(numero1) * parseInt(numero2);
+		}
+
+		function divida(numero1, numero2) {
+			return parseInt(numero1) / parseInt(numero2);
+		}
+	</script>
+</html>
