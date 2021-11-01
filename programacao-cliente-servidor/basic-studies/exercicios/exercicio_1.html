@@ -12,9 +12,60 @@
         <p>Exercício 1 - Antes de continuarmos, vamos praticar o que vimos até aqui. Para isso, tomando como base os códigos anteriores, construa uma página HTML que faça uso do Framework jQuery para requisitar, usando AJAX, um (ou os dois, caso queira)
             dos recursos abaixo: Recurso 1 Recurso 2 O resultado da requisição deverá ser tratado e exibido na própria página. Use sua imaginação para melhor apresentar os dados: utilize tabelas, listas, o que achar melhor, mas lembre-se de que jQuery
             possui funções que vão ajudá-lo nesse processo. Releia o que vimos até aqui como ponto de partida. Tenha atenção ao ler a documentação de cada serviço, uma vez que eles indicam qual o método HTTP a ser utilizado em cada requisição: se POST,
-            GET etc. Usar o método errado pode levar à obtenção do resultado errado ou a resultado nenhum.</p>
+            GET etc. Usar o método errado pode levar à obtenção do recurso1 errado ou a recurso1 nenhum.</p>
     </header>
+    <p>
+        <a id="link1" href="recurso1.json">Requisição AJAX para Recurso 1</a>
+    </p>
+    <p>
+        <a id="link2" href="recurso2.json">Requisição AJAX para Recurso 2</a>
+    </p>
+    <!--Essa div mostrará o recurso1 da requisição AJAX-->
+    <div id="recurso1"></div>
 
+    <div id="recurso2"></div>
+
+    <script type="text/javascript">
+    
+        // Click  do link1
+        $('link1').click(function(){
+            $.ajax({
+                url: "recurso1.json",
+                type: 'post',
+                beforeSend: function(){
+                    $("#recurso1").html("Carregando...");
+                    }
+                })
+                .done(function(msg){
+                    $("#recurso1").html(msg);
+                })
+                .fail(function(jqXHR, textStatus, msg){
+
+                    console.log('A requisição falhou e retornou com a seguinte mensagem: ' + msg);
+                });
+
+        });
+
+        // Click  do link2
+        $('link2').click(function(){
+            $.ajax({
+                url: "recurso2.json",
+                type: 'post',
+                beforeSend: function(){
+                    $("#recurso2").html("Carregando...");
+                    }
+                })
+                .done(function(msg){
+                    $("#recurso2").html(msg);
+                })
+                .fail(function(jqXHR, textStatus, msg){
+
+                    console.log('A requisição falhou e retornou com a seguinte mensagem: ' + msg);
+                });
+
+        });
+
+    </script>
 </body>
 
 </html>
