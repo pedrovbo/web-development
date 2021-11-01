@@ -1,92 +1,137 @@
-<!doctype html>
-<html lang="pt-BR"><head>
-	<meta charset="utf-8">
-	<title>Requisições AJAX com jQuery (Reqres - List Users)</title>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous">
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Requisições AJAX com jQuery (Reqres - List Users)</title>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.5.1.js"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <p>
+      <a id="lnk1" href="javascript:void(0);">Executar a requisição AJAX</a>
+    </p>
 
-<p>
-	<a id="lnk1" href="javascript:void(0);" >Executar a requisição AJAX</a>	
-</p>
+    <p>
+      <a id="lnk2" href="javascript:void(0);">Executar a requisição AJAX</a>
+    </p>
 
-<p>
-	<a id="lnk2" href="javascript:void(0);" >Executar a requisição AJAX</a>	
-</p>
+    <!-- Esse div mostrará o recurso1 da requisição AJAX -->
+    <div id="recurso1"></div>
 
+    <!-- Esse div mostrará o recurso1 da requisição AJAX -->
+    <div id="recurso2"></div>
 
-<!-- Esse div mostrará o recurso1 da requisição AJAX -->
-<div id="recurso1"></div>
+    <script type="text/javascript">
+      //Click do lnk1
+      $("#lnk1").click(function () {
+        $.ajax({
+          url: "recurso1.json",
+          type: "get",
+          beforeSend: function () {
+            //A função beforeSend é chamada antes da requisição ser submetida.
+            //Dependendo da velocidade do retorno da requisição, a msg abaixo pode não chegar
+            // a ser exibida
+            $("#recurso1").html("Carregando...");
+          },
+        })
+          .done(function (msg) {
+            //Em caso de sucesso, mostra na div #recurso1 o retorno da requisição
+            var table1 = "<table border='1'>";
+            table1 +=
+              "<tr><th>Id</th><th>Email</th><th>Nome</th><th>Sobrenome</th><th>Avatar</th></tr>";
+            $.map(msg.data, function (val, i) {
+              table1 +=
+                "<tr>" +
+                "<td>" +
+                val.id +
+                "</td>" +
+                "<td>" +
+                val.email +
+                "</td>" +
+                "<td>" +
+                val.first_name +
+                "</td>" +
+                "<td>" +
+                val.last_name +
+                "</td>" +
+                "<td>" +
+                val.avatar +
+                "</td>" +
+                "</tr>";
+            });
+            table1 += "</table>";
+            $("#recurso1").html("");
+            $("#recurso1").append(table1);
+          })
+          .fail(function (jqXHR, textStatus, msg) {
+            //Em caso de fracasso, mostra no console a mensagem de erro retornada
+            console.log(
+              "A requisição falhou e retornou com a seguinte mensagem: " + msg
+            );
+          });
+      });
 
-<!-- Esse div mostrará o recurso1 da requisição AJAX -->
-<div id="recurso2"></div>
+      //Click do lnk2
+      $("#lnk2").click(function () {
+        $.ajax({
+          url: "recurso2.json",
+          type: "get",
+          beforeSend: function () {
+            //A função beforeSend é chamada antes da requisição ser submetida.
+            //Dependendo da velocidade do retorno da requisição, a msg abaixo pode não chegar
+            // a ser exibida
+            $("#recurso2").html("Carregando...");
+          },
+        })
 
-	<script type="text/javascript">
-		//Click do lnk1
-		$('#lnk1').click(function(){
-			
-			$.ajax({
-				url : "recurso1.json",
-				type : 'get',
-				beforeSend : function(){
-					//A função beforeSend é chamada antes da requisição ser submetida. 
-					//Dependendo da velocidade do retorno da requisição, a msg abaixo pode não chegar 
-					// a ser exibida
-					$("#recurso1").html("Carregando...");
-				}
-			})
-			.done(function(msg){
-				//Em caso de sucesso, mostra na div #recurso1 o retorno da requisição
-				var table = "<table border='1'>";
-				table += '<tr><th>Id</th><th>Email</th><th>Nome</th><th>Sobrenome</th><th>Avatar</th></tr>';
-				$.map(msg.data , function( val, i ) {
-					table += '<tr>' + '<td>' + val.id + '</td>' + '<td>' + val.email + '</td>' + '<td>' + val.first_name + '</td>' + '<td>' + val.last_name + '</td>' + '<td>' + val.avatar + '</td>' + '</tr>';
-				});
-				table += "</table>"
-				$("#recurso1").html("");
-				$("#recurso1").append(table);
-			})
-			.fail(function(jqXHR, textStatus, msg){
-				//Em caso de fracasso, mostra no console a mensagem de erro retornada
-				console.log('A requisição falhou e retornou com a seguinte mensagem: ' + msg);
-			});
-			
-		});
+          .done(function (data) {
+            var table2 = "<table border='1'>";
+            table2 +=
+              "<tr><th>USER ID</th><th>ID</th><th>TITLE</th><th>BODY</th></tr>";
 
-	//Click do lnk2
-	$('#lnk2').click(function(){
-			
-			$.ajax({
-				url : "recurso2.json",
-				type : 'get',
-				beforeSend : function(){
-					//A função beforeSend é chamada antes da requisição ser submetida. 
-					//Dependendo da velocidade do retorno da requisição, a msg abaixo pode não chegar 
-					// a ser exibida
-					$("#recurso2").html("Carregando...");
-				}
-			})
-			.done(function(msg){
-				//Em caso de sucesso, mostra na div #recurso1 o retorno da requisição
-				$("#recurso2").html(JSON.stringify(msg));
-			})
-			.fail(function(jqXHR, textStatus, msg){
-				//Em caso de fracasso, mostra no console a mensagem de erro retornada
-				console.log('A requisição falhou e retornou com a seguinte mensagem: ' + msg);
-			});
-			
-		});
-		
-		
-	</script>
-</body>
+            $.map(data, function (val, i) {
+              table2 +=
+                "<tr>" +
+                "<td>" +
+                val.userId +
+                "</td>" +
+                "<td>" +
+                val.id +
+                "</td>" +
+                "<td>" +
+                val.title +
+                "</td>" +
+                "<td>" +
+                val.body +
+                "</td>" +
+                "</tr>";
+            });
+
+            table2 += "</table>";
+            $("#recurso2").html("");
+            $("#recurso2").append(table2);
+          })
+
+          .fail(function (jqXHR, textStatus, msg) {
+            //Em caso de fracasso, mostra no console a mensagem de erro retornada
+            console.log(
+              "A requisição falhou e retornou com a seguinte mensagem: " + msg
+            );
+          });
+      });
+    </script>
+  </body>
 </html>
