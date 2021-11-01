@@ -15,11 +15,19 @@
 		</ul>
 
 		<script type="text/javascript">
+		/*
 		$('ul li').click(function(){
 			console.log('Conteúdo do item da lista: ' + $(this).text() );
 		});
 		
 		//Adicionando, dinamicamente, um novo elemento <li> à lista
+		$('ul').append('<li>Item 6</li>');
+		*/
+		// Dessa forma o Item 6 poderá dar retorno ao acionar o evento on click
+		$('ul').on('click', 'li', function(){
+			console.log('Conteúdo do item da lista: ' + $(this).text());
+		});
+
 		$('ul').append('<li>Item 6</li>');
 	</script>
 	</body>
