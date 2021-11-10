@@ -20,9 +20,9 @@
 
 - Some code exercises.
 
-## nodeJS
+## Node.js
 
-- nodeJS studies.
+- Node.js studies.
 
 ## programacao-cliente-servidor
 
