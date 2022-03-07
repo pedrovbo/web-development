@@ -13,11 +13,16 @@ img{
 
 i{
   color: #b2b2b2;
+  font-family: "Arial MT", Arial, Helvetica, sans-serif;
 }
 
 h1, h2{
   font-family: "Arial MT Bold", Arial, Helvetica, sans-serif;
   
+}
+
+p{
+  font-family: "Arial MT", Arial, Helvetica, sans-serif;
 }
 /*id*/
 #header-img{
