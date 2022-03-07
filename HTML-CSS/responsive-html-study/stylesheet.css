@@ -10,17 +10,15 @@ img{
   width: 100%;
   height: 100%;  
 }
-/* 
-body{
-  padding-top: 0px;
-  margin-top: 0px;
+
+i{
+  color: #b2b2b2;
 }
 
-header{
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+h1, h2{
+  font-family: "Arial MT Bold", Arial, Helvetica, sans-serif;
+  
 }
- */
 /*id*/
 #header-img{
   line-height: 0;
@@ -72,6 +70,10 @@ header{
 
 .box-container{
   margin-bottom: 5%;
+}
+
+.space{
+  width: 3%;
 }
 
 /*bars*/
