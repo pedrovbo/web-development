@@ -14,6 +14,7 @@ img{
 i{
   color: #b2b2b2;
   font-family: "Arial MT", Arial, Helvetica, sans-serif;
+  font-size: 11px;
 }
 
 h1, h2{
@@ -21,8 +22,17 @@ h1, h2{
   
 }
 
+h1{
+  font-size: 23px;
+}
+
+h2{
+  font-size: 18px;
+}
+
 p{
   font-family: "Arial MT", Arial, Helvetica, sans-serif;
+  font-size: 13px;
 }
 /*id*/
 #header-img{
