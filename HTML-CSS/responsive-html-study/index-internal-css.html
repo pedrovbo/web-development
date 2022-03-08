@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="stylesheet.css"
+      media="screen"
+    />
+
+    <style>
+        /*general*/
+*{  
+  /* background-color: aqua; */
+  box-sizing: border-box;
+  height: auto;  
+  margin: 0;
+}
+
+img{
+  width: 100%;
+  height: 100%;  
+}
+
+i{
+  color: #b2b2b2;
+  font-family: "Arial MT", Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  text-align: left;
+}
+
+h1, h2{
+  font-family: "Arial MT Bold", Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+h1{
+  font-size: 23px;
+  
+}
+
+h2{
+  font-size: 18px;
+}
+
+p{
+  font-family: "Arial MT", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: left;
+}
+/*id*/
+#header-img{
+  line-height: 0;
+}
+
+#top-image{
+  margin-bottom: 5%;
+}
+
+#left-image{
+  width: 50%;
+  height: auto;  
+}
+
+#right-image{
+  width: 50%;
+  height: auto;  
+}
+
+#second-container{
+  display: flex;
+  
+}
+
+#top-image-content{
+  padding-top: 1%;
+}
+
+#left-image-content{
+  height: auto;
+  width: 50%;
+  padding-top: 1%;
+}
+
+#right-image-content{
+  height: auto;
+  width: 50%;
+  padding-top: 1%;  
+}
+
+#third-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*class*/
+.main-container{
+  margin: 0% 5%;    
+}
+
+.img-adjust{
+  height: 100%;  
+}
+
+.box-container{
+  margin-bottom: 5%;
+}
+
+.space{
+  width: 3%;
+}
+
+/*bars*/
+#under-top-image-bar{
+  background-image: linear-gradient(to right,#e5245a, #6a5ba3);
+  width: 50%;
+  height: 5px;
+}
+#under-left-image-bar{
+  background-image: linear-gradient(to right,#76c6cf, #675fa6);
+  width: 60%;
+  height: 5px;
+  
+}
+#under-right-image-bar{
+  background-image: linear-gradient(to right,#75c7cf, #38b389);
+  width: 60%;
+  height: 5px;
+}
+
+
+
+    </style>
+
+    <title>Desafio HTML Responsivo</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="header-img">
+        <img src="/photoshoped-images/header-atualizado.png" alt="Manda Trends header" />
+      </div>
+    </header>
+    <main class="main-container">
+      <div class="box-container">
+        <div id="top-image">
+          <img
+            src="/photoshoped-images/TopImage.png"
+            alt="tree women talking"
+          />
+          <div id="top-image-content">
+            <h1>NRF 2020: conheça os top 5 assuntos do evento.</h1>
+            <p>
+              O maior evento sobre varejo do mundo mostrando as tendências,
+              oportunidades e inovações para o setor.
+            </p>
+            <i>Fonte: CMO ADOBE</i>
+            <div id="under-top-image-bar"></div>
+          </div>
+        </div>
+
+        <div id="second-container">
+          <div id="left-image">
+            <img
+              class="img-adjust"
+              src="/photoshoped-images/LeftImage.png"
+              alt="kobe bryant"
+            />                        
+          </div>
+          
+          <div class="space"></div>
+
+          <div id="right-image">
+            <img
+              class="img-adjust"
+              src="/photoshoped-images/RightImage.png"
+              alt="Whatsapp Logo"
+            />
+                        
+          </div>
+          
+        </div>
+
+        <div id="third-container">
+          <div id="left-image-content">
+            <h2>Petição para colocar Kobe Bryant no logo da NBA.</h1>
+            <i>Fonte: Daily Mail</i>
+            <div id="under-left-image-bar"></div>
+          </div>
+
+          <div class="space"></div>
+
+          <div id="right-image-content">
+            <h2>WhatsApp terá função de pagamentos em 2020.</h1>
+            <i>Fonte: Proxxima</i>
+            <div id="under-right-image-bar"></div>
+          </div>
+
+        </div>
+      </div>      
+    </main>
+    <footer>
+      <div>
+        <img src="/photoshoped-images/footer.png" alt="footer" />
+      </div>
+    </footer>
+  </body>
+</html>
