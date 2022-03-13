@@ -1,3 +1,4 @@
+/*ids*/
 #box-container{
     width: 100%;
     height: auto;
@@ -23,7 +24,8 @@
     margin: auto;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 5%;
+    padding-bottom: 2.5%;
+    padding-top: 1%;
     
 
 }
@@ -39,6 +41,29 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #38321c;
 }
+
+#headline{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #38321c;
+}
+
+#tribute-info{
+    margin-left: 25%;
+    margin-right: 25%;
+    
+}
+/*general*/
 main{
     margin: 1%;
+}
+
+ul{
+    text-align: center;
+}
+
+li{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #38321c;
+    text-align: left;
 }
