@@ -5,6 +5,7 @@
     background-color: #b0c697;
     border-radius: 10px;
     display: flex;
+    padding-bottom: 5%;
 }
 
 #title{
@@ -49,8 +50,8 @@
 }
 
 #tribute-info{
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 23%;
+    margin-right: 23%;
     
 }
 /*general*/
@@ -66,4 +67,17 @@ li{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #38321c;
     text-align: left;
+    padding: 2%;
+}
+
+p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #38321c;
+    text-shadow: 1px 1px #f0c264;
+    
+}
+
+cite{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #38321c;
 }
